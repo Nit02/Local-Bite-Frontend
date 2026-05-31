@@ -16,7 +16,7 @@ const Navbar = ({ currentPage, setCurrentPage, scrollY, cart }) => {
   const totalItems = cart.reduce((sum, i) => sum + i.qty, 0);
   const isTransparent = scrollY <= 50 && currentPage === 'home';
 
-  const navTo = (page) => { setCurrentPage(page); setIsMenuOpen(false); setIsBrowseOpen(false); };
+  const navTo = (page) => { setCurrentPage(page); setIsMenuOpen(false); };
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isTransparent ? 'bg-transparent' : 'bg-white shadow-lg'}`}>
