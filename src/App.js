@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Search, Menu, X, Star, Users, Award, Heart, ChevronDown, ShoppingCart, LogOut, Package } from 'lucide-react';
+import { MapPin, Menu, X, Star, Users, Award, Heart, ShoppingCart, LogOut, Package } from 'lucide-react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
@@ -13,7 +13,6 @@ import TermsPage from './pages/TermsPage';
 const Navbar = ({ currentPage, setCurrentPage, scrollY, cart }) => {
   const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isBrowseOpen, setIsBrowseOpen] = useState(false);
   const totalItems = cart.reduce((sum, i) => sum + i.qty, 0);
   const isTransparent = scrollY <= 50 && currentPage === 'home';
 
